@@ -1,0 +1,16 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "cypress automation",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "cypress run"
+  },
+  "author": "DB",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.4"
+  },
+  "dependencies": {}
+}
