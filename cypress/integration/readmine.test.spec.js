@@ -9,13 +9,13 @@ const repositoryPage = require('../Pages/repository.page');
 
 describe('Test Redmine website', () => {
 
-    xit('Go to the Login page', () => {
+    it('Go to the Login page', () => {
         mainPage.clickLoginButton();
         mainPage.header2Registration.should('have.text', 'Регистрация ')
 
     });
 
-    xit('Registrete with valid credentials', () => {
+    it('Registrete with valid credentials', () => {
         const user = loginPage.generateRandomString(12);
         const password = 'name1295';
         const firstname = 'Name';
@@ -35,7 +35,7 @@ describe('Test Redmine website', () => {
         loginPage.flashNotice.should('contain', 'успешно');
     });
 
-    xit('Registrete with invalid credentials: with just 1 space', () => {
+    it('Registrete with invalid credentials: with just 1 space', () => {
         const space = ' ';
 
         mainPage.clickLoginButton();
@@ -65,7 +65,7 @@ describe('Test Redmine website', () => {
         });
     });
 
-    xit('Check image at Projects page', () => {
+    it('Check image at Projects page', () => {
         mainPage.clickMultipleProkectsSuppor();
         projectsPage.image
             .should('be.visible')
@@ -74,7 +74,7 @@ describe('Test Redmine website', () => {
 
     });
 
-    xit('Check checkboxes at Roadmap page', () => {
+    it('Check checkboxes at Roadmap page', () => {
         roadmapPage.clickRoadmapBtn();
         roadmapPage.checkboxes.not('[disabled]')
             .should('be.checked');
@@ -83,13 +83,13 @@ describe('Test Redmine website', () => {
 
     });
 
-    xit('Scroll to footer at Roadmap page', () => {
+    it('Scroll to footer at Roadmap page', () => {
         roadmapPage.clickRoadmapBtn();
         roadmapPage.scrollIntoViewFooterText().should('be.visible')
 
     });
 
-    xit('verifies download', () => {
+    it('verifies download', () => {
         mainPage.clickDownloadButton();
         downloadPage.downloadZipFile();
         cy.verifyDownload('redmine-4.2.4.zip');
