@@ -8,5 +8,6 @@ jobs:
         uses: actions/checkout@v2.4.2
       - name: Cypress.io
         uses: cypress-io/github-action@v4.1.0
-        with: 
-          run: npm run
+        with:
+          browser: chrome
+          headed: true
