@@ -11,7 +11,7 @@ describe('Test Redmine website', () => {
 
     it('Go to the Login page', () => {
         mainPage.clickLoginButton();
-        mainPage.header2Registration.should('have.text', 'Регистрация ')
+        mainPage.header2Registration.should('have.text', 'Register ')
 
     });
 
