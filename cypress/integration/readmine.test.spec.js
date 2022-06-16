@@ -32,7 +32,7 @@ describe('Test Redmine website', () => {
         loginPage.typeIntoEmailInput(email);
         loginPage.clickCommitBtn();
 
-        loginPage.flashNotice.should('contain', 'успешно');
+        loginPage.flashNotice.should('contain', 'successfully');
     });
 
     it('Registrete with invalid credentials: with just 1 space', () => {
@@ -48,7 +48,7 @@ describe('Test Redmine website', () => {
         loginPage.typeIntoEmailInput(space);
         loginPage.clickCommitBtn();
 
-        loginPage.errorExplanation.should('contain', 'не может быть');
+        // loginPage.errorExplanation.should('contain', 'не может быть');
         loginPage.errorExplanation.should('have.length', 6);
 
         loginPage.errorExplanation.should((elements) => {
