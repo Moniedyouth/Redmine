@@ -55,12 +55,12 @@ describe('Test Redmine website', () => {
             const textsFromErrorMassage = elements.map((i, e) => e.textContent);
             const arr = Array.from(textsFromErrorMassage);
             expect(arr).to.deep.eq([
-                "Пользователь не может быть пустым",
-                "Пользователь имеет неверное значение",
-                "Имя не может быть пустым",
-                "Фамилия не может быть пустым",
-                "Email не может быть пустым",
-                "Пароль недостаточной длины (не может быть меньше 4 символа)"
+                'Login can\'t be blank',
+                'Login is invalid',
+                'First name can\'t be blank',
+                'Last name can\'t be blank',
+                'Email can\'t be blank',
+                'Password is too short (minimum is 4 characters)'
             ]);
         });
     });
@@ -96,7 +96,7 @@ describe('Test Redmine website', () => {
     });
 
     it('verifies radiobuttons', () => {
-        mainPage.clickRepositoryButton ();
+        mainPage.clickRepositoryButton();
         repositoryPage.radioButton1.should('be.checked');
         repositoryPage.radioButton2.should('not.be.checked');
     });
